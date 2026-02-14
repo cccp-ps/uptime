@@ -34,8 +34,8 @@ Editing `.upptimerc.yml` triggers the Setup CI workflow, which regenerates workf
 
 ## Required GitHub Secrets
 
-- `SECRET_SITE_001` — actual URL to monitor (referenced as `$SECRET_SITE_001` in config)
 - `GH_PAT` — Personal Access Token for git operations (optional, falls back to `github.token`)
+- `SECRET_SITE_*` — monitored site URLs (e.g. `SECRET_SITE_001`, `SECRET_SITE_002`), referenced as `$SECRET_SITE_*` in config
 
 ## Commit Conventions
 
