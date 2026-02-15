@@ -5,13 +5,14 @@ sites:
     url: $SECRET_SITE_001
 assignees:
   - cccp-ps
+i18n:
+  footer: "CCCP.PS Uptime // [Source]($REPO) // Powered by [Upptime](https://upptime.js.org)"
 status-website:
   name: CCCP.PS Uptime
   cname: up.cccp.ps
   theme: dark
   themeUrl: https://up.cccp.ps/custom-theme.css
+  logoUrl: https://up.cccp.ps/cccp-logo.svg
   links:
     - rel: stylesheet
       href: https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap
-  i18n:
-    footer: "CCCP.PS Uptime // [Source]($REPO) // Powered by [Upptime](https://upptime.js.org)"
