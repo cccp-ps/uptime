@@ -8,15 +8,15 @@
   --nav-background-color: #0a0a0b;
   --nav-border-bottom-color: #1a1a1d;
   --nav-current-border-bottom-color: #c9434d;
-  --up-border-left-color: #4a9e6e;
+  --up-border-left-color: #3d3d3f;
   --down-border-left-color: #c9434d;
   --degraded-border-left-color: #c98a43;
   --down-background-color: #1a1014;
   --down-color-color: #c9434d;
   --degraded-color-color: #c98a43;
-  --up-color-color: #4a9e6e;
-  --tag-color: #0a0a0b;
-  --tag-up-background-color: #4a9e6e;
+  --up-color-color: #7a7880;
+  --tag-color: #e8e6e3;
+  --tag-up-background-color: #3d3d3f;
   --tag-down-background-color: #c9434d;
   --tag-degraded-background-color: #c98a43;
   --change-background-color: #c98a43;
@@ -29,7 +29,7 @@
   --submit-button-color: #0a0a0b;
   --submit-button-border-color: #c9434d;
   --graph-opacity: 0.85;
-  --graph-filter: brightness(0.8) saturate(0.7) hue-rotate(140deg);
+  --graph-filter: brightness(0.8) saturate(0.5) hue-rotate(140deg);
 }
 
 body {
@@ -40,7 +40,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 0%, rgba(201, 67, 77, 0.04) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(201, 67, 77, 0.10) 0%, transparent 60%);
   pointer-events: none;
   z-index: 0;
 }
@@ -76,6 +76,29 @@ article {
 article.link:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* Graph: move background-image into a pseudo-element so we can filter it without affecting text */
+article.graph {
+  position: relative;
+  background-image: none !important;
+}
+article.graph::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--background);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
+  filter: brightness(0.7) saturate(0.4) hue-rotate(140deg);
+  opacity: 0.75;
+  border-radius: inherit;
+  pointer-events: none;
+}
+article.graph > * {
+  position: relative;
+  z-index: 1;
 }
 
 .tag {
