@@ -1,12 +1,12 @@
 owner: cccp-ps
 repo: uptime
 sites:
-  - name: CCCP.PS
+  - name: CCCP.PS [Homepage]
     url: $SECRET_SITE_001
 assignees:
   - cccp-ps
 i18n:
-  footer: "CCCP.PS Uptime // [Source]($REPO) // Powered by [Upptime](https://upptime.js.org)"
+  footer: "CCCP.PS Uptime // [Source]($REPO)"
 status-website:
   name: CCCP.PS Uptime
   cname: up.cccp.ps
