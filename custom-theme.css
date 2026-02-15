@@ -1,48 +1,83 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
 :root {
-  --body-background-color: #0a0e12;
-  --body-text-color: #c8d6e5;
-  --card-background-color: #111920;
-  --card-border-color: #1e2a35;
-  --nav-background-color: #0d1117;
-  --nav-border-bottom-color: #1e2a35;
-  --nav-current-border-bottom-color: #00ff88;
-  --up-border-left-color: #00ff88;
-  --down-border-left-color: #ff4757;
-  --degraded-border-left-color: #ffa502;
-  --down-background-color: #2d1018;
-  --tag-color: #0a0e12;
-  --tag-up-background-color: #00ff88;
-  --tag-down-background-color: #ff4757;
-  --tag-degraded-background-color: #ffa502;
-  --change-background-color: #ffa502;
+  --body-background-color: #0a0a0b;
+  --body-text-color: #e8e6e3;
+  --card-background-color: #111113;
+  --card-border-color: #1a1a1d;
+  --nav-background-color: #0a0a0b;
+  --nav-border-bottom-color: #1a1a1d;
+  --nav-current-border-bottom-color: #c9434d;
+  --up-border-left-color: #4a9e6e;
+  --down-border-left-color: #c9434d;
+  --degraded-border-left-color: #c98a43;
+  --down-background-color: #1a1014;
+  --down-color-color: #c9434d;
+  --degraded-color-color: #c98a43;
+  --up-color-color: #4a9e6e;
+  --tag-color: #0a0a0b;
+  --tag-up-background-color: #4a9e6e;
+  --tag-down-background-color: #c9434d;
+  --tag-degraded-background-color: #c98a43;
+  --change-background-color: #c98a43;
+  --code-color: #c9434d;
+  --code-background-color: #111113;
+  --error-button-border-color: #c9434d;
+  --error-button-background-color: #111113;
+  --error-button-color: #c9434d;
+  --submit-button-background-color: #c9434d;
+  --submit-button-color: #0a0a0b;
+  --submit-button-border-color: #c9434d;
   --graph-opacity: 0.85;
-  --graph-filter: brightness(0.8) saturate(0.7);
+  --graph-filter: brightness(0.8) saturate(0.7) hue-rotate(140deg);
 }
+
 body {
-  background: #0a0e12 radial-gradient(ellipse at 50% 0%, rgba(0,255,136,0.03) 0%, transparent 60%) no-repeat;
+  background: #0a0a0b;
+  position: relative;
 }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(201, 67, 77, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  opacity: 0.025;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'JetBrains Mono', monospace;
 }
 h2 {
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   font-size: 1.1rem;
   font-weight: 500;
 }
 h4 {
   font-weight: 500;
 }
+
 article {
   border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 article.link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
 }
+
 .tag {
   font-family: 'JetBrains Mono', monospace;
   text-transform: uppercase;
@@ -51,15 +86,19 @@ article.link:hover {
   border-radius: 3px;
   font-size: 65%;
 }
+
 nav {
   border-bottom-width: 2px;
 }
 nav a {
-  transition: opacity 0.2s ease;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease, opacity 0.2s ease;
 }
 nav a:hover {
   opacity: 0.7;
 }
+
 form label {
   font-family: 'JetBrains Mono', monospace;
   text-transform: uppercase;
@@ -68,22 +107,28 @@ form label {
   cursor: pointer;
   transition: color 0.2s ease;
 }
+
 .data {
   font-family: 'JetBrains Mono', monospace;
   font-weight: 500;
 }
+
+a {
+  transition: opacity 0.2s ease, text-decoration-color 0.2s ease;
+}
+a:hover {
+  text-decoration-color: #c9434d;
+}
+
 footer {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.75rem;
   letter-spacing: 0.05em;
-  opacity: 0.5;
+  opacity: 0.4;
 }
 footer a {
-  text-decoration-color: rgba(200,214,229,0.3);
+  text-decoration-color: rgba(232, 230, 227, 0.2);
 }
 footer a:hover {
-  text-decoration-color: rgba(200,214,229,0.7);
-}
-a {
-  transition: opacity 0.2s ease, text-decoration-color 0.2s ease;
+  text-decoration-color: rgba(232, 230, 227, 0.5);
 }
