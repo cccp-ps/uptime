@@ -6,8 +6,8 @@ sites:
 assignees:
   - cccp-ps
 status-website:
+  name: CCCP.PS Uptime
   cname: up.cccp.ps
-  name: CCCP
   theme: dark
   links:
     - rel: stylesheet
